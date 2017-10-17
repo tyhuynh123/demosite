@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# installing python package
+
+
+#1.     Set PermitRootLogin yes in /etc/ssh/sshd_config
+#2.     service sshd restart
+#3.     As root, useradd ansible
+#4.     As root, passwd ansible (verimatrix)
+#5.     As root, usermod –G wheel,users ansible
+#6.     mkdir /home/ansible/.ssh
+#7.     chown ansible:ansible /home/ansible/.ssh
+#8.     chmod 700 /home/ansible/.ssh
+#9.     scp your id_rsa.pub to server’s /home/ansible/.ssh/authorized_keys
+#10.    chown ansible:ansible /home/ansible/.ssh/authorized_keys
+#11.    chmod 600 /home/ansible/.ssh/authorized_keys
+#12.    visudo, remove comment for %wheel NOPASSWORD
+
+
+echo 'sed -i s/#PermitRootLogin/PermitRootLogin/ /etc/ssh/sshd_config'
+sed -i s/#PermitRootLogin/PermitRootLogin/ /etc/ssh/sshd_config
+
+
+#disable pw access
+#echo 'useradd -p $(echo "verimatrix" | openssl passwd -1 -stdin) ansible'
+#useradd -p $(echo "verimatrix" | openssl passwd -1 -stdin) ansible
+
+echo 'useradd ansible'
+useradd -m ansible
+
+echo 'usermod -G wheel,users ansible # redhat'
+usermod -G wheel,users ansible
+
+echo 'usermod -G sudo,users ansible # ubuntu'
+usermod -G sudo,users ansible
+
+echo 'mkdir /home/ansible/.ssh'
+mkdir /home/ansible/.ssh
+
+echo 'chown ansible:ansible /home/.ssh'
+chown ansible:ansible /home/ansible/.ssh
+
+echo 'chmod 700 /home/ansible/.ssh'
+chmod 700 /home/ansible/.ssh
+
+echo 'Add pub keys to ansible'
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzMS5coT/SYoXCbbIT4p5o5q1Pv1EUUR4UZ51prxxcrj+RU/37MwiFQbAX6w69YuQuOLK1C/iccjM7tqCHsSYFDoabPWqrIF+pNNUe18soU19dN87ybDdnu0rEoq2gpoL3PHN2QfJ7mE1qlr033zvg48rVPdxCv4BD6KGQbCvaun7DhjNqm2cJDbZI6C48eYaS13d+6RJrMG6UqF1AlG7PCIGSPPLK4UBQi+SWS8NW3RBB/MgOan5r9oSMUXFkpYgB+uYm4IMYdTi45Ae8WM2MQsbEZMUsKGA6Q+ijpHuV+kypNUByz4dngTZQYaHXXyybN5vmZa3BkTae7NQr3rV3Q== testadm@ussd-qavm12' >> /home/ansible/.ssh/authorized_keys
+
+echo 'chown ansible:ansible /home/ansible/.ssh/authorized_keys'
+chown ansible:ansible /home/ansible/.ssh/authorized_keys
+
+echo 'chmod 600 /home/ansible/.ssh/authorized_keys'
+chmod 600 /home/ansible/.ssh/authorized_keys
+
+## %wheel        ALL=(ALL)       NOPASSWD: ALL
+echo 'sed -i -e s/#.*%wheel.*NOPASSWD.*/'%wheel ALL=\(ALL\) NOPASSWD: ALL'/ /etc/sudoers'
+sed -i -e s/^#.*%wheel.*NOPASSWD.*/'%wheel ALL=(ALL) NOPASSWD: ALL'/ /etc/sudoers
+
+echo 'echo add same for ubuntu'
+echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+echo Enable ssh PasswordAuthentication
+sed -i -e s/^.*#PasswordAuth.*/'PasswordAuthentication yes'/ /etc/ssh/sshd_config
+echo remove PasswordAuthentication no
+sed -i -e s/^.*PasswordAuthentication.*no.*// /etc/ssh/sshd_config
+
+sudo apt-get install python -y 
+
+service sshd restart

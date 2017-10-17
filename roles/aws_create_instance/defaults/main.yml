@@ -1,0 +1,11 @@
+instance_ssh_user: ansible
+instance_flavor: t2.micro        
+latest_image: ami-6e1a0117
+vcas_vm: mydemo
+aws_key_name: demo
+aws_region: us-west-2
+aws_security_group: ansible_aws_create_instance
+aws_create_timeout: 600
+instance_name: "{{ vcas_vm }}"
+vcas_vm: mydemo2
+instance_groups: vcas_server

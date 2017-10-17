@@ -1,0 +1,16 @@
+- name: Create virtual machine
+  hosts: localhost 
+  roles:
+    - aws_create_instance
+
+- name: configure and deploy the webservers and application code
+  hosts: webservers
+  remote_user: ansible
+
+  roles:
+    - apache2
+    - mysql
+    - php-fpm
+  vars:
+    mysql_root_password: ""
+

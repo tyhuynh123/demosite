@@ -1,0 +1,16 @@
+- fail: msg="Variable aws_key_name is not defined. It should hold the name of your SSH key in AWS."
+  when: ( aws_key_name is undefined ) or ( aws_key_name == "" )
+
+  # use a long form as there are too many parameters
+- name: Creating instance "{{ instance_name }}"
+  ec2:
+    region: '{{ aws_region }}'
+    instance_type: '{{ instance_flavor }}'
+    key_name: '{{ aws_key_name }}'
+    image: '{{ latest_image }}'
+    group: '{{ aws_security_group }}'
+    user_data: "{{ lookup('template', '../templates/user_data') }}"
+    wait: yes
+    wait_timeout: '{{ aws_create_timeout }}'
+    instance_tags:
+      Name: '{{ instance_name }}'

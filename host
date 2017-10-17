@@ -1,0 +1,7 @@
+
+aws_region=us-west-2
+####################################################################################################################################
+[vcas_server]
+#mydemo2 ansible_ssh_host=mydemo2 ansible_ssh_user=ansible
+[webservers]
+mydemo2

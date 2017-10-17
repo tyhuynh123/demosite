@@ -1,0 +1,10 @@
+- name: Check if the instance {{ instance_name }} already exists
+  command: aws ec2 describe-instances --filters Name=tag:Name,Values='{{ instance_name }}' Name=instance-state-name,Values='running' --query 'Reservations[0].Instances[0]' --output json
+  register: instance_info
+  changed_when: False
+
+- name: Create instance "{{ instance_name }}"
+  include: create_instance.yml
+  when: instance_info.stdout == 'null'
+
+- include: get_instance_ready.yml 

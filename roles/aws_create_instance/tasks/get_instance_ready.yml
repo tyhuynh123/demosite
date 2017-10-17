@@ -1,0 +1,37 @@
+- name: Obtain info about the instance "{{ instance_name }}" from AWS
+  command: aws ec2 describe-instances --filters Name=tag:Name,Values='{{ instance_name }}' Name=instance-state-name,Values='running' --query 'Reservations[0].Instances[0]' --output json
+  register: instance_info_raw
+  changed_when: False
+
+- set_fact:
+    instance_info: "{{ instance_info_raw.stdout | from_json }}"
+
+- name: Wait for the SSH connections to vitual machine "{{ instance_name }}"
+  wait_for: host={{ instance_info['PublicDnsName'] }} port=22 state=started timeout=500
+
+- name : Waiting for machine to be ready 
+  command: sleep 10 
+
+- name: Add the instance to Ansible inventory
+  add_host: hostname={{ instance_name }} ansible_ssh_host={{ instance_info['PublicDnsName'] }} ansible_ssh_user={{ instance_ssh_user }} groups={{ instance_groups }}
+  tags: define_instance
+  when: instance_name not in groups.{{ instance_groups }}
+
+- name: Print out hostvars info for {{ instance_name }}
+  debug: var=hostvars['{{ instance_name }}']['{{ item }}']
+  with_items:
+    - "ansible_ssh_user"
+    - "ansible_ssh_host"
+    - "inventory_hostname_short"
+    - "inventory_hostname"
+  tags: define_instance
+
+- name: Gather facts about the new virtual machine
+  setup:
+  connection: ssh
+  delegate_to: "{{ hostvars[instance_name]['ansible_ssh_host'] }}"
+  remote_user: "{{ hostvars[instance_name]['ansible_ssh_user'] }}"
+  register: instance_facts
+
+- name: Print out facts about the new virtual machine
+  debug: var=instance_facts
