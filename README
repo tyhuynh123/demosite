@@ -1,3 +1,8 @@
 To Deploy just run this command below.
  
 ansible-playbook -i host deploy_mydemosite.yml
+
+Please make sure you have the AWS cli installed becasue Ansible is using it to access AWS resources.
+Please also add your Access Key and Secret Key when you are configuring your aws-configure command.
+
+
