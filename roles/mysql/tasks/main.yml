@@ -37,7 +37,7 @@
   become: yes
 
 - name: Create Application DB User
-  mysql_user: name=newuser password=R$gina1! priv=*.*:ALL host='%' state=present
+  mysql_user: name=newuser password=demosite priv=*.*:ALL host='%' state=present
   become: yes
 
 - name: Create table dump of Users
