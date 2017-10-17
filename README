@@ -3,13 +3,11 @@ This Deployment is for UBUNTU 14.4 or Higher
 
 To Deploy just run this command below.
  
- Before you deploy please add your ssh_rsa_key to the user_data file
- 
- use any text editor 
+ Before you deploy please add your ssh_rsa_key to the user_data file.
  
  vi ./roles/aws_create_instance/templates/user_data
  
-Add your rsa-key under after echo below is an example  
+Add your rsa-key after echo statement in the user_data file - below is an example:  
 
 echo 'add your rsa_key_here' >> /home/ansible/.ssh/authorized_keys
  
