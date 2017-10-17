@@ -1,7 +1,4 @@
-This Deployment Ansible Playbook only work on UBUNTU Disto  
-
-
-To Deploy just run this command below.
+To Deploy follow the instructions below. 
  
  Before you deploy please add your public ssh_rsa_key to the user_data file.
  
