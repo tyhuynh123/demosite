@@ -7,5 +7,5 @@ aws_region: us-west-2
 aws_security_group: ansible_aws_create_instance
 aws_create_timeout: 600
 instance_name: "{{ vcas_vm }}"
-vcas_vm: mydemo2
+vcas_vm: mydemosite
 instance_groups: vcas_server
