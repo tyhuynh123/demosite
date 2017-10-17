@@ -16,7 +16,7 @@ ansible-playbook -i host deploy_mydemosite.yml
 
 prerequisites
 
-Please install pip install  for Ansible AWSCLI and boto  
+Please install Python pip and then run pip install,Ansible,AWSCLI and boto  
 
 This Ansible playbook deploy a upload form a put your pic in a gallery. 
 
