@@ -8,6 +8,9 @@ Add your rsa-key after  the echo statement in the user_data file - below is an e
 
 echo 'add your rsa_key_here' >> /home/ansible/.ssh/authorized_keys
  
+ 
+Below is the command to run your Ansible Playbook
+
 ansible-playbook -i host deploy_mydemosite.yml
 
 
