@@ -8,4 +8,6 @@ prerequisites
 Please make sure you have the AWS cli installed becasue Ansible is using it to access AWS resources.
 Please also add your Access Key and Secret Key when you are configuring your aws-configure command.
 
+This Ansible playbook deploy a upload form a put your pic in a gallery. 
+
 
