@@ -16,9 +16,8 @@ ansible-playbook -i host deploy_mydemosite.yml
 
 prerequisites
 
-Please make sure you have the AWS cli installed becasue Ansible is using it to access AWS resources.
-Please also add your Access Key and Secret Key when you are configuring your aws-configure command.
+Please install pip install  for Ansible AWSCLI and boto  
 
 This Ansible playbook deploy a upload form a put your pic in a gallery. 
-Please use Ansible Version 2.7 or higher
+
 
