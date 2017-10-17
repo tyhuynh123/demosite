@@ -1,6 +1,6 @@
 To Deploy follow the instructions below. 
  
- Before you deploy please add your public ssh_rsa_key to the user_data file.
+ Before you deploy, please add your public ssh_rsa_key to the user_data file.
  
  vi ./roles/aws_create_instance/templates/user_data
  
