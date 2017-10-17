@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/tyhuynh123/demosite.git
+git clone https://github.com/tyhuynh123/demofiles.git
 
 cd demosite && cp * -R /var/www/html/
 
