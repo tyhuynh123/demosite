@@ -4,7 +4,7 @@ To Deploy follow the instructions below.
  
  vi ./roles/aws_create_instance/templates/user_data
  
-Add your rsa-key after echo statement in the user_data file - below is an example:  
+Add your rsa-key after  the echo statement in the user_data file - below is an example:  
 
 echo 'add your rsa_key_here' >> /home/ansible/.ssh/authorized_keys
  
