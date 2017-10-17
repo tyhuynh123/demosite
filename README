@@ -1,3 +1,6 @@
+This Deployment work on UBUNTU 14.4 or Higher 
+
+
 To Deploy just run this command below.
  
 ansible-playbook -i host deploy_mydemosite.yml
@@ -9,5 +12,5 @@ Please make sure you have the AWS cli installed becasue Ansible is using it to a
 Please also add your Access Key and Secret Key when you are configuring your aws-configure command.
 
 This Ansible playbook deploy a upload form a put your pic in a gallery. 
-
+Ansible Version 2.7 or higher
 
