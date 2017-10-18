@@ -18,6 +18,8 @@ prerequisites
 
 Please install Python pip and then run pip install,Ansible,AWSCLI and boto  
 
+Please add your AWS Access key aand Secret when running aws configure 
+
 This Ansible playbook deploy a upload form a put your pic in a gallery. 
 
 
