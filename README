@@ -1,25 +1,29 @@
 To Deploy follow the instructions below. 
  
- Before you deploy, please add your public ssh_rsa_key to the user_data file.
+Before you deploy, please add your public ssh_rsa_key to the user_data file.
  
- vi ./roles/aws_create_instance/templates/user_data
+edit your user_date file with any text editor below is any example
+ 
+vim ./roles/aws_create_instance/templates/user_data
  
 Add your ssh-rsa public key after the echo statement in the user_data file - below is an example:  
 
 echo 'add your rsa public key here' >> /home/ansible/.ssh/authorized_keys
  
  
+Before you can run the Ansible PlayBook you must have the  Prerequisites below.
+
+Prerequisites - 
+
+Please install Python pip and then run pip install Ansible, AWSCLI and boto  
+
+Please add your AWS Access key and Secret when running aws configure command 
+
+This Ansible playbook deploy a upload form a put your pic in a gallery.
+
 Below is the command to run your Ansible Playbook
 
 ansible-playbook -i host deploy_mydemosite.yml
 
-
-Prerequisites
-
-Please install Python pip and then run pip install Ansible, AWSCLI and boto  
-
-Please add your AWS Access key and Secret when running aws configure 
-
-This Ansible playbook deploy a upload form a put your pic in a gallery. 
 
 
