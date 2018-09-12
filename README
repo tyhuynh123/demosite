@@ -4,7 +4,7 @@ Before you deploy, Please have a ssh rsa plubic key created, if you do not have 
 
 Run this command " ssh-keygen -t rsa". After you have an rsa public key, please run this command below.   
 
-"cat  ~/.ssh/id_rsa.pub >> yourgitdownloadrepo/.ssh/authorized_keys"
+"cat  ~/.ssh/id_rsa.pub >> demosite/blob/master/roles/aws_create_instance/templates/user_data"
   
 Before you can run the Ansible PlayBook you must have the  Prerequisites below.
 
