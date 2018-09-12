@@ -19,7 +19,7 @@ Please install Python pip and then run pip install Ansible, AWSCLI and boto
 
 Please add your AWS Access key and Secret when running aws configure command 
 
-This Ansible playbook deploy a upload form a put your pic in a gallery.
+This Ansible playbook deploy a upload form of your pic in a gallery.
 
 Below is the command to run your Ansible Playbook
 
