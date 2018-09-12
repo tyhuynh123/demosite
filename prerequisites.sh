@@ -4,10 +4,11 @@
 rsakey=$(cat ~/.ssh/id_rsa.pub)
 
 ## Adding RSA key to user_data 
-echo "echo $rsakey >> /home/ansible/.ssh/authorized_keys" >> roles/aws_create_instance/templates/user_data 
+echo -e "\n"
+echo -e "echo $rsakey >> /home/ansible/.ssh/authorized_keys\n" >> roles/aws_create_instance/templates/user_data 
 
 ## Adding sshd restart to user_data
-echo "service sshd restart" >> roles/aws_create_instance/templates/user_data
+echo -e "service sshd restart\n" >> roles/aws_create_instance/templates/user_data
 
 ## Installing all prerequisites package throught python pip
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
