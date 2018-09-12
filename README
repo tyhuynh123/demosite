@@ -1,12 +1,13 @@
 To Deploy follow the instructions below. 
  
-Before you deploy, Please have a ssh rsa plubic key created, if you do not have a ssh rsa public key, 
+Before you deploy, Please have a ssh rsa plubic key created, if you do not have a ssh rsa public key. 
 
-Run this command " ssh-keygen -t rsa". After you have an rsa public key, please run this command below.   
+Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key, please run these commands below.
 
-"cat  ~/.ssh/id_rsa.pub >> demosite/blob/master/roles/aws_create_instance/templates/user_data"
-  
-Before you can run the Ansible PlayBook you must have the  Prerequisites below.
+< rsakey=$(cat ~/.ssh/id_rsa.pub) >
+< echo "$rsakey >> /home/ansible/.ssh/authorized_keys" >> /demosite/blob/master/roles/aws_create_instance/templates/user_data >
+
+Before you can run the Ansible PlayBook you must have the  PrerequisOUTPUT=$(cat ~/.ssh/id_rsa.pub)ites below.
 
 Prerequisites - 
 
