@@ -65,5 +65,3 @@ echo remove PasswordAuthentication no
 sed -i -e s/^.*PasswordAuthentication.*no.*// /etc/ssh/sshd_config
 
 sudo apt-get install python -y 
-
-service sshd restart
