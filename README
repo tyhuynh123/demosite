@@ -1,16 +1,11 @@
 To Deploy follow the instructions below. 
  
-Before you deploy, please add your public ssh_rsa_key to the user_data file.
- 
-edit your user_date file with any text editor below is any example
- 
-vim ./roles/aws_create_instance/templates/user_data
- 
-Add your ssh-rsa public key after the echo statement in the user_data file - below is an example:  
+Before you deploy, Please have a ssh rsa plubic key created, if you do not have a ssh rsa public key, 
 
-echo 'add your rsa public key here' >> /home/ansible/.ssh/authorized_keys
- 
- 
+Run this command " ssh-keygen -t rsa". After you have an rsa public key, please run this command below.   
+
+"cat  ~/.ssh/id_rsa.pub >> yourgitdownloadrepo/.ssh/authorized_keys"
+  
 Before you can run the Ansible PlayBook you must have the  Prerequisites below.
 
 Prerequisites - 
