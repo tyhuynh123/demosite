@@ -43,8 +43,8 @@ chown ansible:ansible /home/ansible/.ssh
 echo 'chmod 700 /home/ansible/.ssh'
 chmod 700 /home/ansible/.ssh
 
-echo 'Add pub keys to ansible'
-echo 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzMS5coT/SYoXCbbIT4p5o5q1Pv1EUUR4UZ51prxxcrj+RU/37MwiFQbAX6w69YuQuOLK1C/iccjM7tqCHsSYFDoabPWqrIF+pNNUe18soU19dN87ybDdnu0rEoq2gpoL3PHN2QfJ7mE1qlr033zvg48rVPdxCv4BD6KGQbCvaun7DhjNqm2cJDbZI6C48eYaS13d+6RJrMG6UqF1AlG7PCIGSPPLK4UBQi+SWS8NW3RBB/MgOan5r9oSMUXFkpYgB+uYm4IMYdTi45Ae8WM2MQsbEZMUsKGA6Q+ijpHuV+kypNUByz4dngTZQYaHXXyybN5vmZa3BkTae7NQr3rV3Q== testadm@ussd-qavm12' >> /home/ansible/.ssh/authorized_keys
+#echo 'Add pub keys to ansible'
+#echo 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzMS5coT/SYoXCbbIT4p5o5q1Pv1EUUR4UZ51prxxcrj+RU/37MwiFQbAX6w69YuQuOLK1C/iccjM7tqCHsSYFDoabPWqrIF+pNNUe18soU19dN87ybDdnu0rEoq2gpoL3PHN2QfJ7mE1qlr033zvg48rVPdxCv4BD6KGQbCvaun7DhjNqm2cJDbZI6C48eYaS13d+6RJrMG6UqF1AlG7PCIGSPPLK4UBQi+SWS8NW3RBB/MgOan5r9oSMUXFkpYgB+uYm4IMYdTi45Ae8WM2MQsbEZMUsKGA6Q+ijpHuV+kypNUByz4dngTZQYaHXXyybN5vmZa3BkTae7NQr3rV3Q== testadm@ussd-qavm12' >> /home/ansible/.ssh/authorized_keys
 
 echo 'chown ansible:ansible /home/ansible/.ssh/authorized_keys'
 chown ansible:ansible /home/ansible/.ssh/authorized_keys
