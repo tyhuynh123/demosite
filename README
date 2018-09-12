@@ -2,18 +2,12 @@ To Deploy follow the instructions below.
  
 Before you deploy, Please have a ssh rsa plubic key created, if you do not have a ssh rsa public key. 
 
-Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key, please run these commands below.
+Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key.
 
-Please run the "rsa_key.sh" script. 
+Please make rerequisites.sh executable by chmod +x  and then run the script.   
 
-Before you can run the Ansible PlayBook you must have the  
-
-Prerequisites - 
-
-Please install Python pip and then run pip install Ansible, AWSCLI and boto  
-
-Please add your AWS Access key and Secret when running aws configure command 
-
+Before you can run the Ansible playbook please run <aws configure> command and add your AWS Access key plus Secret.
+ 
 This Ansible playbook deploy a upload form of your pic in a gallery.Below is 
 
 Run your Ansible Playbook <ansible-playbook -i host deploy_mydemosite.yml>
