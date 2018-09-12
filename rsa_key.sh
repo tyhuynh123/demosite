@@ -9,7 +9,6 @@ echo "$rsakey >> /home/ansible/.ssh/authorized_keys" >> roles/aws_create_instanc
 ## Adding sshd restart to user_data
 echo "service sshd restart" >> roles/aws_create_instance/templates/user_data
 
-
+## Installing all prerequisites package throught python pip
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-python get-pip.py
-
+python get-pip.py && pip install ansible awscli boto
