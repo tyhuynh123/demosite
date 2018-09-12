@@ -1,4 +1,4 @@
-This Ansible playbook deploy a upload form of your pic into a photo gallery. 
+This Ansible playbook deploy a upload form of your pic into a photo gallery on AWS. 
 
 To Deploy, follow the instructions below. 
  
