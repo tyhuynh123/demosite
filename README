@@ -4,11 +4,9 @@ Before you deploy, Please have a ssh rsa plubic key created, if you do not have 
 
 Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key, please run these commands below.
 
-rsakey=$(cat ~/.ssh/id_rsa.pub) 
-echo "$rsakey >> /home/ansible/.ssh/authorized_keys" >> roles/aws_create_instance/templates/user_data 
-echo "service sshd restart" >> roles/aws_create_instance/templates/user_data
+Please run the "rsa_key.sh" script  
 
-Before you can run the Ansible PlayBook you must have the  PrerequisOUTPUT=$(cat ~/.ssh/id_rsa.pub)ites below.
+Before you can run the Ansible PlayBook you must have the  
 
 Prerequisites - 
 
@@ -18,7 +16,7 @@ Please add your AWS Access key and Secret when running aws configure command
 
 This Ansible playbook deploy a upload form of your pic in a gallery.Below is 
 
-the command to run your Ansible Playbook ansible-playbook -i host deploy_mydemosite.yml
+Run your Ansible Playbook <ansible-playbook -i host deploy_mydemosite.yml>
 
 
 
