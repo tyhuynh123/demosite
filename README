@@ -4,7 +4,7 @@ Before you deploy, Please have a ssh rsa plubic key created, if you do not have 
 
 Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key, please run these commands below.
 
-Please run the "rsa_key.sh" script  
+Please run the "rsa_key.sh" script. 
 
 Before you can run the Ansible PlayBook you must have the  
 
