@@ -4,7 +4,7 @@ To Deploy, follow the instructions below.
  
 Before you deploy, Please have a ssh rsa plubic key created, if you do not have a ssh rsa public key. 
 
-Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key.
+Run this command < ssh-keygen -t rsa > to create one. 
 
 Please run "prerequisites.sh" script and make it executable by < chmod +x prerequisites.sh >   
 
