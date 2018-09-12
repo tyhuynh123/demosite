@@ -1,14 +1,14 @@
-To Deploy follow the instructions below. 
+This Ansible playbook deploy a upload form of your pic into a photo gallery. 
+
+To Deploy, follow the instructions below. 
  
 Before you deploy, Please have a ssh rsa plubic key created, if you do not have a ssh rsa public key. 
 
 Run this command < ssh-keygen -t rsa > to create one. After you have an rsa public key.
 
-Please make rerequisites.sh executable by chmod +x  and then run the script.   
+Please run "prerequisites.sh" script and make it executable by < chmod +x prerequisites.sh >   
 
 Before you can run the Ansible playbook please run <aws configure> command and add your AWS Access key plus Secret.
- 
-This Ansible playbook deploy a upload form of your pic in a gallery.Below is 
 
 Run your Ansible Playbook <ansible-playbook -i host deploy_mydemosite.yml>
 
