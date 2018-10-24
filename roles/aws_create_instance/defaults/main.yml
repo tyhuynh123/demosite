@@ -1,6 +1,6 @@
 instance_ssh_user: ansible
 instance_flavor: t2.micro        
-latest_image: ami-6e1a0117
+latest_image: ami-60114e0a
 aws_key_name: demo
 aws_region: us-east-1
 aws_security_group: default
