@@ -25,7 +25,5 @@
 
 - name: Execute Install script for Composer
   command: sh /tmp/install.sh
-  command: cd /var/www/html
-  command: composer install 
-  
+  command: command: chdir=/var/www/html composer install
   become: yes
