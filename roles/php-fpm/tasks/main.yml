@@ -21,5 +21,7 @@
     src: files/install.sh
     dest: /tmp/
     mode: 0777
-    command: sh /tmp/install.sh
-    become: yes
+
+- name: Execute Install script for Composer
+  command: sh /tmp/install.sh
+  become: yes
