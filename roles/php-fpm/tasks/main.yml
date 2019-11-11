@@ -18,11 +18,13 @@
   become: yes
   service: name=php7.0-fpm state=restarted
 
-- copy:
     src: files/install.sh
     dest: /tmp/
     mode: 0777
 
 - name: Execute Install script for Composer
   command: sh /tmp/install.sh
+  command: sh cd /var/www/html
+  command: sh composer install 
+  
   become: yes
