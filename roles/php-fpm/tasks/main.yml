@@ -18,6 +18,7 @@
   become: yes
   service: name=php7.0-fpm state=restarted
 
+- copy:
     src: files/install.sh
     dest: /tmp/
     mode: 0777
