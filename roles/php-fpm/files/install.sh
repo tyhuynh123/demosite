@@ -9,6 +9,8 @@ mkdir -p /var/www/html/resources/cache && chmod 777 /var/www/html/resources/cach
 
 apt-get install composer -y
 
-cd /var/www/html/ && composer install
+cd /var/www/html/ 
+
+composer install
 
 sudo service apache2 restart
