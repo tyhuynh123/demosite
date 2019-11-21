@@ -7,4 +7,4 @@ cd demofiles && cp * -R /var/www/html/
 mkdir -p /var/www/html/gallery-images && chmod 777 /var/www/html/gallery-images
 mkdir -p /var/www/html/resources/cache && chmod 777 /var/www/html/resources/cache
 
-sudo service apache2 restart
+service apache2 restart
