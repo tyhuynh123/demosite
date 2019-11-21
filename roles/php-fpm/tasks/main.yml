@@ -17,16 +17,3 @@
 - name: Restart php-fpm
   become: yes
   service: name=php7.0-fpm state=restarted
-
-- copy:
-    src: files/install.sh
-    dest: /tmp/
-    mode: 0777
-
-- name: Execute Install script for Composer
-  command: sh /tmp/install.sh
-  become: yes
-
-- composer:
-    command: install
-    working_dir: /var/www/html/
